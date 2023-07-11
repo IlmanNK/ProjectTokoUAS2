@@ -10,7 +10,7 @@ class Post extends Model
     use HasFactory;
 
     public function up(): void{
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('Post', function (Blueprint $table) {
             $table->id();
             $table->string('image');
             $table->string('title');
