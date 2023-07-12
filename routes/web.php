@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\TokoOnlineUAS2;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -49,9 +49,42 @@ Route::get('/',[HomeController::class, 'index']);
 
 
 
+use App\Http\Controllers\TokoOnlineUAS2;
+
+Route::prefix('toko')->group(function(){
+
+    Route::get('/admin',
+        [TokoOnlineUAS2::class, 'admin']);
+
+    Route::get('/detail',
+        [TokoOnlineUAS2::class, 'detail']);
+
+    Route::group(['middleware' => ['auth']], function(){
+
+        Route::get('/admin',
+            [TokoOnlineUAS2::class, 'admin'])->name('produk.admin');
+        
+        Route::get('create',
+            [TokoOnlineUAS2::class, 'create'])->name('produk.create');
+        
+        Route::get('/profile',
+            [TokoOnlineUAS2::class, 'index']);
+        
+        // Route::post('/',
+        //     [TokoOnlineUAS2::class, "store"])->name('produk.store');
+    
+        // Route::get('/{product}/edit',
+        //     [TokoOnlineUAS2::class, 'edit'])->name('produk.edit');
+    
+        // Route::delete('/{product}',
+        //     [TokoOnlineUAS2::class, 'destroy'])->name('produk.destroy');
+    
+        // Route::put('/{product}',
+        //     [TokoOnlineUAS2::class, 'update'])->name('produk.update');
+    });
 
 
-
+});
 
 
 
