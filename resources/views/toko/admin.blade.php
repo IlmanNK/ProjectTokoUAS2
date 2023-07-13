@@ -13,6 +13,7 @@
         <th scope="col">Stok</th>
         <th scope="col">Min Stok</th>
         <th scope="col">Deskripsi</th>
+        <th scope="col">Kategori</th>
         <th scope="col">Action</th>
 
       </tr>
@@ -28,9 +29,10 @@
             <td>{{ $product->stok_produk }}</td>
             <td>{{ $product->min_stok }}</td>
             <td>{{ $product->deskripsi_produk }}</td>
+            <td>{{ $product->kategori_produk_id }}</td>
             <td>
-            <a href="{{ route('produk.edit', $product) }}" class="btn btn-primary">Edit</a>
-              <form action="{{ route('produk.destroy', $product) }}" method="POST" style="display: inline">
+            <a href="{{ route('produk.edit', $produk) }}" class="btn btn-primary">Edit</a>
+              <form action="{{ route('produk.destroy', $produk) }}" method="POST" style="display: inline">
                   @csrf
                   @method('DELETE')
                   <button type="submit" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" class="btn btn-danger">Delete</button>

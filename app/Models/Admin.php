@@ -13,5 +13,5 @@ class Admin extends Model
 
 
     public $timestamps = false;
-    protected $fillable = ['kode', 'nama_produk', 'harga_produk', 'stok_produk', 'min_stok', 'deskripsi_produk'];
+    protected $fillable = ['kode', 'nama_produk', 'harga_produk', 'stok_produk', 'min_stok', 'deskripsi_produk', 'kategori_produk_id'];
 }

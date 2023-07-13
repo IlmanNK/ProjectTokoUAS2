@@ -73,13 +73,13 @@ Route::prefix('toko')->group(function(){
         Route::post('/',
             [TokoOnlineUAS2::class, "store"])->name('produk.store');
     
-        Route::get('/{product}/edit',
+        Route::get('/{produk}/edit',
             [TokoOnlineUAS2::class, 'edit'])->name('produk.edit');
     
-        Route::delete('/{product}',
+        Route::delete('/{produk}',
             [TokoOnlineUAS2::class, 'destroy'])->name('produk.destroy');
     
-        Route::put('/{product}',
+        Route::put('/{produk}',
             [TokoOnlineUAS2::class, 'update'])->name('produk.update');
     });
 
