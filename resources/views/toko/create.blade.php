@@ -1,7 +1,7 @@
 @extends('template/admin/index')
 
 @section('content')
-<h1>Tambah Prouk</h1>
+<h1>Tambah Produk</h1>
 
 <form action="{{ route("produk.store")}}" method="POST">
     @csrf

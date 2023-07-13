@@ -70,17 +70,17 @@ Route::prefix('toko')->group(function(){
         Route::get('/profile',
             [TokoOnlineUAS2::class, 'index']);
         
-        // Route::post('/',
-        //     [TokoOnlineUAS2::class, "store"])->name('produk.store');
+        Route::post('/',
+            [TokoOnlineUAS2::class, "store"])->name('produk.store');
     
-        // Route::get('/{product}/edit',
-        //     [TokoOnlineUAS2::class, 'edit'])->name('produk.edit');
+        Route::get('/{product}/edit',
+            [TokoOnlineUAS2::class, 'edit'])->name('produk.edit');
     
-        // Route::delete('/{product}',
-        //     [TokoOnlineUAS2::class, 'destroy'])->name('produk.destroy');
+        Route::delete('/{product}',
+            [TokoOnlineUAS2::class, 'destroy'])->name('produk.destroy');
     
-        // Route::put('/{product}',
-        //     [TokoOnlineUAS2::class, 'update'])->name('produk.update');
+        Route::put('/{product}',
+            [TokoOnlineUAS2::class, 'update'])->name('produk.update');
     });
 
 
