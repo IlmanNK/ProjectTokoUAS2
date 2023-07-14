@@ -54,7 +54,7 @@ class TokoOnlineUAS2 extends Controller
             'stok_produk' => 'required',
             'min_stok' => 'required',
             'deskripsi_produk' => 'required',
-            'kategori_produk_id' => 'required',
+            // 'kategori_produk_id' => 'required',
         ]);
 
         Produk::create($request->all());
@@ -81,8 +81,7 @@ class TokoOnlineUAS2 extends Controller
             'harga_produk' => 'required',
             'stok_produk' => 'required',
             'min_stok' => 'required',
-            'deskripsi' => 'required',
-            'kategori_produk_id' => 'required',
+            'deskripsi_produk' => 'required',
         ]);
 
         $produk->update($request->all());
