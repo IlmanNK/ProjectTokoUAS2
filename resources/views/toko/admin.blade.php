@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Products</h1>
-<a href="{{ route('produk.create') }}" class="btn btn-primary mb-3">Tambah Produk</a>
+<a href="{{ route('products.create') }}" class="btn btn-primary mb-3">Tambah Produk</a>
 <table class="table">
     <thead>
       <tr>
@@ -13,7 +13,7 @@
         <th scope="col">Stok</th>
         <th scope="col">Min Stok</th>
         <th scope="col">Deskripsi</th>
-        <th scope="col">Kategori</th>
+        {{-- <th scope="col">Kategori</th> --}}
         <th scope="col">Action</th>
 
       </tr>
@@ -22,6 +22,7 @@
         @php $number = 1;  @endphp
         @foreach($produk as $product)
         <tr>
+          <th scope="row">{{ $loop->iteration }} </th>
             <td>{{ $number }}</td>
             <td>{{ $product->kode }}</td>
             <td>{{ $product->nama_produk }}</td>
@@ -29,10 +30,10 @@
             <td>{{ $product->stok_produk }}</td>
             <td>{{ $product->min_stok }}</td>
             <td>{{ $product->deskripsi_produk }}</td>
-            <td>{{ $product->kategori_produk_id }}</td>
+            {{-- <td>{{ $product->kategori_produk_id }}</td> --}}
             <td>
-            <a href="{{ route('produk.edit', $produk) }}" class="btn btn-primary">Edit</a>
-              <form action="{{ route('produk.destroy', $produk) }}" method="POST" style="display: inline">
+            <a href="{{ route('produk.edit', $product) }}" class="btn btn-primary">Edit</a>
+              <form action="{{ route('produk.destroy', $product) }}" method="POST" style="display: inline">
                   @csrf
                   @method('DELETE')
                   <button type="submit" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" class="btn btn-danger">Delete</button>

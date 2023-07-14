@@ -3,7 +3,7 @@
 @section('content')
 <h1>Tambah Produk</h1>
 
-<form action="{{ route("produk.store")}}" method="POST">
+<form action="{{ route("products.store")}}" method="POST">
     @csrf
     <div class="form-group row">
         <label for="kode" class="col-4 col-form-label">Kode :</label>
@@ -15,6 +15,12 @@
         <label for="nama_produk" class="col-4 col-form-label">Nama Produk :</label>
         <div class="col-8">
             <input type="text" name="nama_produk" id="nama_produk" class="form-control">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="nama_produk" class="col-4 col-form-label">Harga Produk :</label>
+        <div class="col-8">
+            <input type="text" name="harga_produk" id="nama_produk" class="form-control">
         </div>
     </div>
     <div class="form-group row">
@@ -35,7 +41,7 @@
           <textarea id="textarea" name="deskripsi_produk" cols="40" rows="5" class="form-control"></textarea>
         </div>
     </div> 
-    <div class="form-group row">
+    {{-- <div class="form-group row">
         <label class="col-4">Kategori Produk</label> 
         <div class="col-8">
           <div class="custom-control custom-radio custom-control-inline">
@@ -51,7 +57,7 @@
             <label for="kategori_produk_id_2" class="custom-control-label">Vulcanize</label>
           </div>
         </div>
-      </div> 
+      </div>  --}}
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 

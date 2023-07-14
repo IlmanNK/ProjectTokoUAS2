@@ -1,7 +1,7 @@
 @extends('template/admin/index')
 
 @section('content')
-<form action="{{ route('produk.update', $produk) }}" method="POST">
+<form action="{{ route('products.update', $produk) }}" method="POST">
     @csrf
     @method('PUT')
     <div class="form-group row">
