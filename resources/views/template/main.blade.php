@@ -38,7 +38,7 @@
         </div>
         
         <!-- Footer-->
-        <footer class="footer absolute-bottom-0 py-4 bg-dark ">
+        <footer class="footer absolute-bottom-0 py-4 bg-black ">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
         </footer>
         <!-- Bootstrap core JS-->

@@ -93,7 +93,13 @@ Route::prefix('toko')->group(function(){
 
 
 
+use App\Http\Controllers\ProdukController;
 
+Route::prefix('produk')->group(function(){
+
+    Route::get('/post',
+    [ProdukController::class,'post']);
+});
 
 
 

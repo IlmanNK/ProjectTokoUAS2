@@ -7,8 +7,8 @@
 @section('content2')
 <br>
 
-<div class="dgit-flex justify-content-center align-items-center" style="font-family: 'Franklin Gothic Medium', sans-serif">
-    <h1 class="text-center fw-bold" >Dapatkan Rilisan Terbaru</h1>
+<div class="d-flex justify-content-center align-items-center" style="font-family: 'Franklin Gothic Medium', sans-serif">
+    <h1 class="text-center fw-bold bg-black text-light p-3" >Dapatkan Rilisan Terbaru</h1>
   </div>
 <br>
 
