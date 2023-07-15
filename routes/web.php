@@ -51,6 +51,11 @@ Route::get('/',[HomeController::class, 'index']);
 
 use App\Http\Controllers\TokoOnlineUAS2;
 
+$TokoOnlineUAS2 = new TokoOnlineUAS2();
+$response = $TokoOnlineUAS2->showProduk();
+
+
+
 Route::prefix('toko')->group(function(){
 
     Route::get('/admin',
@@ -62,25 +67,25 @@ Route::prefix('toko')->group(function(){
     Route::group(['middleware' => ['auth']], function(){
 
         Route::get('/admin',
-            [TokoOnlineUAS2::class, 'admin'])->name('produk.admin');
+            [TokoOnlineUAS2::class, 'admin'])->name('products.admin');
         
-        Route::get('create',
-            [TokoOnlineUAS2::class, 'create'])->name('produk.create');
+        Route::post('create',
+            [TokoOnlineUAS2::class, 'create'])->name('products.create');
         
         Route::get('/profile',
             [TokoOnlineUAS2::class, 'index']);
         
         Route::post('/',
-            [TokoOnlineUAS2::class, "store"])->name('produk.store');
+            [TokoOnlineUAS2::class, "store"])->name('products.store');
     
-        Route::get('/{produk}/edit',
-            [TokoOnlineUAS2::class, 'edit'])->name('produk.edit');
+        Route::get('/{products}/edit',
+            [TokoOnlineUAS2::class, 'edit'])->name('products.edit');
     
-        Route::delete('/{produk}',
-            [TokoOnlineUAS2::class, 'destroy'])->name('produk.destroy');
+        Route::delete('/{products}',
+            [TokoOnlineUAS2::class, 'destroy'])->name('products.destroy');
     
-        Route::put('/{produk}',
-            [TokoOnlineUAS2::class, 'update'])->name('produk.update');
+        Route::put('/{products}',
+            [TokoOnlineUAS2::class, 'update'])->name('products.update');
     });
 
 
