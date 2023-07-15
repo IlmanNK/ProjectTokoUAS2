@@ -1,8 +1,9 @@
 @extends('template/admin/index')
 
 @section('content')
-
+<div style="margin-top: 10px">
 <a href="{{ route('produk.create') }}" class="btn btn-primary mb-3">Tambah Produk</a>
+</div>
 <table class="table">
     <thead>
       <tr>

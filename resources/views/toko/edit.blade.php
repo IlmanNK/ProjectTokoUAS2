@@ -1,6 +1,9 @@
 @extends('template/admin/index')
 
 @section('content')
+<div style="background-color:orange">
+  <h3 style="color:white; margin:10px">Edit Produk</h3>
+</div>
 <form action="{{ route('produk.update', $produk) }}" method="POST">
     @csrf
     @method('PUT')
@@ -59,4 +62,6 @@
       </div> --}}
     <button type="submit" class="btn btn-primary">Update</button>
 </form>
+
+
 @endsection
