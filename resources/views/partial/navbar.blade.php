@@ -11,7 +11,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#!">Artikel</a></li>
                         {{-- <li><hr class="dropdown-divider" /></li> --}}
-                        <li><a class="dropdown-item" href="/produk.produk_baru">Produk Terbaru</a></li>
+                        <li><a class="dropdown-item" href="/produk/NewProduk">Produk Terbaru</a></li>
                         <li><a class="dropdown-item" href="#!">Jenis Sepatu</a></li>
                     </ul>
                 </li>

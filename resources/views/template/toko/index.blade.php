@@ -10,6 +10,9 @@
     {{-- Navbar --}}
     @include('partial.navbar')
     {{-- end navbar --}}
+    <div class="container">
+        @yield('content')
+    </div>
 
     {{-- content --}}
 

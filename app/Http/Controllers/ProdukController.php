@@ -7,8 +7,10 @@ use App\Models\Produk;
 
 class ProdukController extends Controller
 {
-    public function post()
+    public function NewProduk()
     {
-        return view('produk.NewProduk');
+        $produk = Produk::all();
+        // $produk = Produk::orderBy('created_at', 'desc')->get();
+        return view('produk/NewProduk', compact('produk'));
     }
 }

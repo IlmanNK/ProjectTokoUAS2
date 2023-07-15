@@ -32,11 +32,6 @@ Route::get('/tentang', function () {
     ]);
 });
 
-Route::get('/profil', function () {
-    return view('toko/profil',[
-        "title" => "Profil Toko"
-    ]);
-});
 
 Route::get('/produk', function () {
     return view('toko/produk',[
@@ -97,8 +92,10 @@ use App\Http\Controllers\ProdukController;
 
 Route::prefix('produk')->group(function(){
 
-    Route::get('/post',
-    [ProdukController::class,'post']);
+    Route::get('/NewProduk',
+    [ProdukController::class,'NewProduk'])->name('produk.NewProduk');
+
+
 });
 
 
