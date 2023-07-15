@@ -1,14 +1,14 @@
 @extends('template/admin/index')
 
 @section('content')
-<<<<<<< HEAD
+
 <div style="background-color: orange">
   <h3 style="color:rgb(255, 255, 255); margin:10px">Tambah Produk</h3>
 </div>
-<form action="{{ route("produk.store")}}" method="POST">
-<h1>Tambah Produk</h1>
+{{-- <form action="{{ route("produk.store")}}" method="POST">
+<h1>Tambah Produk</h1> --}}
 
-<form action="{{ route("products.store")}}" method="POST">
+<form action="{{ route("produk.store")}}" method="POST">
     @csrf
     <div class="form-group row">
         <label for="kode" class="col-4 col-form-label">Kode :</label>

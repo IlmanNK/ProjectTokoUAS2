@@ -10,19 +10,19 @@ use App\Models\Produk;
 class TokoOnlineUAS2 extends Controller
 {
 
-    public function showProduk()
-    {
-        $produk = new Produk();
-        $produk->nama_produk = 'Nama Produk';
-        $produk->harga_produk = 'Harga Produk';
-        $produk->stok_produk = 'Stok Produk';
-        $produk->min_stok = 'Minimal stok Produk';
-        $produk->deskripsi_produk = 'Deskripsi';
-        $produk->kategori_produk_id = 'Kategori Produk';
+    // public function showProduk()
+    // {
+    //     $produk = new Produk();
+    //     $produk->nama_produk = 'Nama Produk';
+    //     $produk->harga_produk = 'Harga Produk';
+    //     $produk->stok_produk = 'Stok Produk';
+    //     $produk->min_stok = 'Minimal stok Produk';
+    //     $produk->deskripsi_produk = 'Deskripsi';
+    //     // $produk->kategori_produk_id = 'Kategori Produk';
         
 
-        return view('template.main')->with('produk', $produk);
-    }
+    //     return view('template.main')->with('produk', $produk);
+    // }
 
     // public function index()
     // {
