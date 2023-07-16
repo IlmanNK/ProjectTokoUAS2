@@ -13,4 +13,19 @@ class ProdukController extends Controller
         // $produk = Produk::orderBy('created_at', 'desc')->get();
         return view('produk/NewProduk', compact('produk'));
     }
+
+    // TokoOnlineUAS2.php
+    public function showProduk($kode)
+    {
+        // Ambil data produk dari database berdasarkan kode
+        $produk = Produk::where('kode', $kode)->first();
+
+        // Jika produk tidak ditemukan, bisa ditambahkan penanganan error sesuai kebutuhan
+        if (!$produk) {
+            abort(404, 'Produk tidak ditemukan');
+        }
+
+        // Kirim data produk ke halaman 'detail' untuk ditampilkan
+        return view('toko/detail', compact('produk'));
+    }
 }

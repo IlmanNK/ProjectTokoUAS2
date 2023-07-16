@@ -20,29 +20,25 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/home', function () {
-    return view('home',[
-        "title" => "home",
-    ]);
-});
 
 Route::get('/tentang', function () {
-    return view('tentang',[
+    return view('tentang', [
         "title" => "Tentang Kami",
     ]);
 });
 
 
 Route::get('/produk', function () {
-    return view('toko/produk',[
+    return view('toko/produk', [
         'title' => 'Daftar Produk'
     ]);
 });
 
-Route::get('/',[HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index']);
+Route::get('/welcome', [HomeController::class, 'welcome']);
 
 Route::get('/checkout', function () {
-    return view('checkout',[
+    return view('checkout', [
         "title" => "Checkout",
     ]);
 });
@@ -55,51 +51,71 @@ use App\Http\Controllers\TokoOnlineUAS2;
 
 
 
-Route::prefix('toko')->group(function(){
+Route::prefix('toko')->group(function () {
 
-    Route::get('/admin',
-        [TokoOnlineUAS2::class, 'admin']);
+    Route::get(
+        '/admin',
+        [TokoOnlineUAS2::class, 'admin']
+    );
 
-    Route::get('/detail',
-        [TokoOnlineUAS2::class, 'detail']);
+    Route::get(
+        '/detail',
+        [TokoOnlineUAS2::class, 'detail']
+    );
 
-    Route::group(['middleware' => ['auth']], function(){
+    Route::group(['middleware' => ['auth']], function () {
 
-        Route::get('/admin',
-            [TokoOnlineUAS2::class, 'admin'])->name('produk.admin');
-        
-        Route::get('create',
-            [TokoOnlineUAS2::class, 'create'])->name('produk.create');
-        
-        Route::get('/profile',
-            [TokoOnlineUAS2::class, 'index']);
-        
-        Route::post('/',
-            [TokoOnlineUAS2::class, "store"])->name('produk.store');
-    
-        Route::get('/{produk}/edit',
-            [TokoOnlineUAS2::class, 'edit'])->name('produk.edit');
-    
-        Route::delete('/{produk}',
-            [TokoOnlineUAS2::class, 'destroy'])->name('produk.destroy');
-    
-        Route::put('/{produk}',
-            [TokoOnlineUAS2::class, 'update'])->name('produk.update');
+        Route::get(
+            '/admin',
+            [TokoOnlineUAS2::class, 'admin']
+        )->name('produk.admin');
+
+        Route::get(
+            'create',
+            [TokoOnlineUAS2::class, 'create']
+        )->name('produk.create');
+
+        Route::get(
+            '/profile',
+            [TokoOnlineUAS2::class, 'index']
+        );
+
+        Route::post(
+            '/',
+            [TokoOnlineUAS2::class, "store"]
+        )->name('produk.store');
+
+        Route::get(
+            '/{produk}/edit',
+            [TokoOnlineUAS2::class, 'edit']
+        )->name('produk.edit');
+
+        Route::delete(
+            '/{produk}',
+            [TokoOnlineUAS2::class, 'destroy']
+        )->name('produk.destroy');
+
+        Route::put(
+            '/{produk}',
+            [TokoOnlineUAS2::class, 'update']
+        )->name('produk.update');
     });
-
-
 });
 
 
 
 use App\Http\Controllers\ProdukController;
 
-Route::prefix('produk')->group(function(){
+Route::prefix('produk')->group(function () {
 
-    Route::get('/NewProduk',
-    [ProdukController::class,'NewProduk'])->name('produk.NewProduk');
+    Route::get(
+        '/NewProduk',
+        [ProdukController::class, 'NewProduk']
+    )->name('produk.NewProduk');
 
 
+    // routes/web.php
+    Route::get('/produk/{kode}', 'TokoOnlineUAS2@showProduk')->name('produk');
 });
 
 

@@ -29,8 +29,6 @@
 
     <div class="row">
         @isset($produk)
-            
-       
         @foreach ($produk as $product)
             @if ($product->kode === 'Vul')
                 <div class="col-md-4 mb-5">
@@ -85,7 +83,7 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Liat Produk</a>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{ route('produk', ['kode' => 'Vul']) }}">Liat Produk</a>
                             </div>
                         </div>
                     </div>
