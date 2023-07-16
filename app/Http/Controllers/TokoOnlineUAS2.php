@@ -19,7 +19,7 @@ class TokoOnlineUAS2 extends Controller
     //     $produk->min_stok = 'Minimal stok Produk';
     //     $produk->deskripsi_produk = 'Deskripsi';
     //     // $produk->kategori_produk_id = 'Kategori Produk';
-        
+
 
     //     return view('template.main')->with('produk', $produk);
     // }
@@ -47,18 +47,30 @@ class TokoOnlineUAS2 extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'kode' => 'required',
+
+
+        $validatedData = $request->validate([
+            // 'kode' => 'required',
             'nama_produk' => 'required',
-            'harga_produk' => 'required',
-            'stok_produk' => 'required',
-            'min_stok' => 'required',
+            'harga_produk' => 'required |numeric',
+            'stok_produk' => 'required |numeric',
+            'min_stok' => 'required |numeric',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'deskripsi_produk' => 'required',
             // 'kategori_produk_id' => 'required',
         ]);
 
-        Produk::create($request->all());
-        return redirect()->route('produk.admin')->with('success', 'Produk berhasil disimpan');
+        // Simpan gambar ke dalam database
+        $gambar = $request->file('gambar');
+        $gambarName = time() . '.' . $gambar->getClientOriginalExtension();
+        $gambar->storeAs('public/gambar', $gambarName);
+
+        if ($request->file('gambar')) {
+            $request->all()['gambar'] = $request->file('gambar')->store('post-gambar');
+        }
+
+        Produk::create($validatedData);
+        return redirect()->route('toko.admin')->with('success', 'Produk berhasil disimpan');
     }
 
     public function edit(Produk $produk)
@@ -76,14 +88,16 @@ class TokoOnlineUAS2 extends Controller
     public function update(Request $request, Produk $produk)
     {
         $request->validate([
-            'kode' => 'required',
+            // 'kode' => 'required',
             'nama_produk' => 'required',
             'harga_produk' => 'required',
             'stok_produk' => 'required',
             'min_stok' => 'required',
+            // 'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'deskripsi_produk' => 'required',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
+
+        
 
         $produk->update($request->all());
         return redirect()->route('produk.admin')->with('update', 'Product updated successfuly');

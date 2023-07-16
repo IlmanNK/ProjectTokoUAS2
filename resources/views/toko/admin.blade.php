@@ -13,8 +13,8 @@
         <th scope="col">Harga</th>
         <th scope="col">Stok</th>
         <th scope="col">Min Stok</th>
-        <th scope="col">Deskripsi</th>
         <th scope="col">Gambar</th>
+        <th scope="col">Deskripsi</th>
         {{-- <th scope="col">Kategori</th> --}}
         <th scope="col">Action</th>
 
@@ -31,8 +31,8 @@
             <td>{{ $product->harga_produk }}</td>
             <td>{{ $product->stok_produk }}</td>
             <td>{{ $product->min_stok }}</td>
-            <td>{{ $product->deskripsi_produk }}</td>
             <td>{{ $product->gambar }}</td>
+            <td>{{ $product->deskripsi_produk }}</td>
             {{-- <td>{{ $product->kategori_produk_id }}</td> --}}
             <td>
             <a href="{{ route('produk.edit', $product) }}" class="btn btn-primary">Edit</a>

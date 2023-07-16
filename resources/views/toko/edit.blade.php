@@ -40,7 +40,7 @@
     <div class="form-group row">
         <label for="deskripsi_produk" class="col-4 col-form-label">Deskripsi :</label> 
         <div class="col-8">
-          <input type='text' name="deskripsi_produk" id="deskripsi_produk" cols='40' rows='5'  class="form-control" value="{{ $produk->deskripsi_produk }}">
+          <input type='text' name="deskripsi_produk" id="deskripsi_produk" cols='40' rows='5'  class="form-control" value="{{ $produk->gambar }}">
         </div>
     </div> 
     <div class="form-group row">

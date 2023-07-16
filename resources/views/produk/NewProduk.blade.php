@@ -19,7 +19,7 @@
                     <div class="col-md-4 mb-5">
                         <div class="card h-100">
                             <!-- Product image -->
-                            <img class="card-img-top" src="../assets/foto/{{ $product->foto }}"
+                            <img class="card-img-top" src="{{ $product->gambar }}"
                                 alt="{{ $product->nama_produk }}" />
                             <!-- Product details -->
                             <div class="card-body p-4">

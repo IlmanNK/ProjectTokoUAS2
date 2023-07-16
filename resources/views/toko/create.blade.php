@@ -8,7 +8,7 @@
 {{-- <form action="{{ route("produk.store")}}" method="POST">
 <h1>Tambah Produk</h1> --}}
 
-<form action="{{ route("produk.store")}}" method="POST">
+<form action="{{ route("produk.store")}}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-group row">
         <label for="kode" class="col-4 col-form-label">Kode :</label>
@@ -41,17 +41,17 @@
         </div>
     </div>
     <div class="form-group row">
+      <label for="gambar" class="col-4 col-form-label">Gambar :</label>
+      <div class="col-8">
+          <input type="file" name="gambar" id="gambar" class="form-control @error('title') is-invalid @enderror">
+      </div>
+    </div> 
+    <div class="form-group row">
         <label for="deskripsi_produk" class="col-4 col-form-label">Deskripsi :</label> 
         <div class="col-8">
           <textarea id="textarea" name="deskripsi_produk" cols="40" rows="5" class="form-control"></textarea>
         </div>
     </div>
-    <div class="form-group row">
-      <label for="gambar" class="col-4 col-form-label">Gambar :</label>
-      <div class="col-8">
-          <input type="file" name="gambar" id="gambar" class="form-control">
-      </div>
-    </div> 
     {{-- <div class="form-group row">
         <label class="col-4">Kategori Produk</label> 
         <div class="col-8">
