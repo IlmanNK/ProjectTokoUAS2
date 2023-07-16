@@ -45,6 +45,12 @@
         <div class="col-8">
           <textarea id="textarea" name="deskripsi_produk" cols="40" rows="5" class="form-control"></textarea>
         </div>
+    </div>
+    <div class="form-group row">
+      <label for="gambar" class="col-4 col-form-label">Gambar :</label>
+      <div class="col-8">
+          <input type="file" name="gambar" id="gambar" class="form-control">
+      </div>
     </div> 
     {{-- <div class="form-group row">
         <label class="col-4">Kategori Produk</label> 

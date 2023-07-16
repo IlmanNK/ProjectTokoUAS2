@@ -40,8 +40,14 @@
     <div class="form-group row">
         <label for="deskripsi_produk" class="col-4 col-form-label">Deskripsi :</label> 
         <div class="col-8">
-          <textarea type='text' name="deskripsi_produk" id="deskripsi_produk" cols='40' rows='5'  class="form-control" value="{{ $produk->deskripsi_produk }}"></textarea>
+          <input type='text' name="deskripsi_produk" id="deskripsi_produk" cols='40' rows='5'  class="form-control" value="{{ $produk->deskripsi_produk }}">
         </div>
+    </div> 
+    <div class="form-group row">
+      <label for="gambar" class="col-4 col-form-label">Gambar :</label>
+      <div class="col-8">
+          <input type="file" name="gambar" id="gambar" class="form-control" value="{{ $produk->deskripsi_produk }}">
+      </div>
     </div> 
     {{-- <div class="form-group row">
         <label class="col-4">Kategori Produk</label> 

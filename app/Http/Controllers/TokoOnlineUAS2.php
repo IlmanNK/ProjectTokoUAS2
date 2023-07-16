@@ -82,6 +82,7 @@ class TokoOnlineUAS2 extends Controller
             'stok_produk' => 'required',
             'min_stok' => 'required',
             'deskripsi_produk' => 'required',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         $produk->update($request->all());
