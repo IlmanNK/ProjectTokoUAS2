@@ -40,13 +40,13 @@
     <div class="form-group row">
         <label for="deskripsi_produk" class="col-4 col-form-label">Deskripsi :</label> 
         <div class="col-8">
-          <input type='text' name="deskripsi_produk" id="deskripsi_produk" cols='40' rows='5'  class="form-control" value="{{ $produk->gambar }}">
+          <input type='text' name="deskripsi_produk" id="deskripsi_produk" cols='40' rows='5'  class="form-control" value="{{ $produk->deskripsi_produk }}">
         </div>
     </div> 
     <div class="form-group row">
       <label for="gambar" class="col-4 col-form-label">Gambar :</label>
       <div class="col-8">
-          <input type="file" name="gambar" id="gambar" class="form-control" value="{{ $produk->deskripsi_produk }}">
+          <input type="file" name="gambar" id="gambar" class="form-control" value="{{ $produk->gambar }}">
       </div>
     </div> 
     {{-- <div class="form-group row">

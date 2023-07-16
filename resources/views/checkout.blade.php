@@ -142,7 +142,7 @@ button:hover{
 <body>
     <div class="container" style="margin-block: 5%">
         <div class="title">
-            <h2>Product Order Form</h2>
+            <h2>Form Pembelian Produk</h2>
         </div>
       <div class="d-flex">
         <form action="" method="">
@@ -236,13 +236,14 @@ button:hover{
             <input type="email" name="city"> 
           </label>
         </form> --}}
+        {{-- @foreach($produk as $product) --}}
         <div class="Yorder">
           <table>
             <tr>
-              <th colspan="2">Your order</th>
+              <th colspan="2"></th>
             </tr>
             <tr>
-              <td>Product Name x 2(Qty)</td>
+              <td>Product Name</td>
               <td>$88.00</td>
             </tr>
             <tr>
@@ -270,6 +271,7 @@ button:hover{
           </div>
           <button type="button">Place Order</button>
         </div><!-- Yorder -->
+        {{-- @endforeach --}}
        </div>
       </div>
 </body>
