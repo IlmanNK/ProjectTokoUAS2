@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\TokoOnlineUAS2;
 use App\Models\Produk;
 
 class ProdukController extends Controller
@@ -27,5 +28,12 @@ class ProdukController extends Controller
 
         // Kirim data produk ke halaman 'detail' untuk ditampilkan
         return view('toko/detail', compact('produk'));
+
+        
+    }
+    public function JenisProduk(){
+        
+        $produk = Produk::all();
+        return view('produk/JenisProduk', compact('produk'));
     }
 }

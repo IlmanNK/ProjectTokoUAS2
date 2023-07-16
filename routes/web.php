@@ -116,6 +116,8 @@ Route::prefix('produk')->group(function () {
 
     // routes/web.php
     Route::get('/produk/{kode}', 'TokoOnlineUAS2@showProduk')->name('produk');
+
+    Route::get('/JenisProduk', [ProdukController::class, 'JenisProduk'])->name('produk.JenisProduk');
 });
 
 

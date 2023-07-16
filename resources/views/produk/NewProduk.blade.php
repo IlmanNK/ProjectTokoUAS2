@@ -20,7 +20,7 @@
                         <div class="card h-100">
                             <!-- Product image -->
                             <img class="card-img-top" src="{{ asset('storage/'. $product->gambar) }}"
-                                alt="{{ $product->nama_produk }}" />
+                                alt="{{ $product->nama_produk }}"  width="300" height="350"/>
                             <!-- Product details -->
                             <div class="card-body p-4">
                                 <div class="text-center">
