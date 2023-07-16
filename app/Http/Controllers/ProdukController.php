@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\TokoOnlineUAS2;
+// use App\Http\Controllers\TokoOnlineUAS2;
 use App\Models\Produk;
 
 class ProdukController extends Controller
@@ -16,24 +16,52 @@ class ProdukController extends Controller
     }
 
     // TokoOnlineUAS2.php
-    public function showProduk($kode)
+    // TokoOnlineUAS2.php
+    // public function showProdukVul()
+    // {
+    //     // Ambil data produk dari database berdasarkan kode 'Vul'
+    //     $produkVul = Produk::where('kode', 'Vul')->get();
+
+    //     return view('vul', compact('produkVul'));
+    // }
+
+
+
+
+    public function JenisProduk()
     {
-        // Ambil data produk dari database berdasarkan kode
-        $produk = Produk::where('kode', $kode)->first();
 
-        // Jika produk tidak ditemukan, bisa ditambahkan penanganan error sesuai kebutuhan
-        if (!$produk) {
-            abort(404, 'Produk tidak ditemukan');
-        }
-
-        // Kirim data produk ke halaman 'detail' untuk ditampilkan
-        return view('toko/detail', compact('produk'));
-
-        
-    }
-    public function JenisProduk(){
-        
         $produk = Produk::all();
         return view('produk/JenisProduk', compact('produk'));
     }
+    // public function Vul()
+    // {
+    //     $produk = Produk::all();
+    //     $produk = Produk::where('kode', 'Vul')->get();
+    //     return view('produk.Vul', compact('produk'));
+    // }
+
+    // TokoOnlineUAS2.php
+    public function showProdukVul()
+    {
+        // Ambil data produk dari database berdasarkan kode 'Vul'
+        $produk = Produk::all();
+        $produkVul = Produk::where('kode', 'Vul')->get();
+
+        return view('produk.Vul', compact('produkVul'));
+    }
+    public function showProdukSne()
+    {
+        $produk = Produk::all();
+        $produkSne = Produk::where('kode', 'Sne')->get();
+        return view('produk.Sne', compact('produkSne'));
+    }
+
+    public function showProdukSo()
+    {
+        $produk = Produk::all();
+        $produkSo = Produk::where('kode', 'So')->get();
+        return view('produk.So', compact('produkSo'));
+    }
 }
+
