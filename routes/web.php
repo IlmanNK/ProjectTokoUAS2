@@ -41,7 +41,11 @@ Route::get('/produk', function () {
 
 Route::get('/',[HomeController::class, 'index']);
 
-
+Route::get('/checkout', function () {
+    return view('checkout',[
+        "title" => "Checkout",
+    ]);
+});
 
 
 use App\Http\Controllers\TokoOnlineUAS2;
