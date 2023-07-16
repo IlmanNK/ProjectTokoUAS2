@@ -47,7 +47,6 @@ class ProdukController extends Controller
         // Ambil data produk dari database berdasarkan kode 'Vul'
         $produk = Produk::all();
         $produkVul = Produk::where('kode', 'Vul')->get();
-
         return view('produk.Vul', compact('produkVul'));
     }
     public function showProdukSne()

@@ -27,44 +27,6 @@
     </div>
     <br>
 
-    <div class="row">
-        @isset($produk)
-        @foreach ($produk as $product)
-            @if ($product->kode === 'Vul')
-                <div class="col-md-4 mb-5">
-                    <div class="card h-100">
-                        <!-- Product image-->
-                        <img class="card-img-top" src="../assets/foto/Vulcanize.png" alt="Vulcanize" />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h1 class="fw-bolder" style="font-family: Bebas Neue">Vulcanize</h1>
-                                <!-- Product price-->
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{ route('JenisProduk', ['kode' => 'Vul']) }}">Liat Produk</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @elseif ($product->kode === 'Sne')
-                <div class="col-md-4 mb-5">
-                    <!-- Card untuk produk dengan kode 'Sne' -->
-                    <!-- Tampilkan data sesuai kebutuhan -->
-                </div>
-            @elseif ($product->kode === 'So')
-                <div class="col-md-4 mb-5">
-                    <!-- Card untuk produk dengan kode 'So' -->
-                    <!-- Tampilkan data sesuai kebutuhan -->
-                </div>
-            @endif
-        @endforeach
-        @endisset
-    </div>
-    
 
     <div class="container-fluid">
         <div class="row">
@@ -83,7 +45,7 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{ route('Vul') }}">Liat Produk</a>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{ route(('produk.Vul')) }}">Liat Produk</a>
                             </div>
                         </div>
                     </div>

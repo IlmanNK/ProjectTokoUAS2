@@ -34,6 +34,8 @@ Route::get('/produk', function () {
     ]);
 });
 
+
+Route::get('/toko', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/welcome', [HomeController::class, 'welcome']);
 
@@ -119,7 +121,7 @@ Route::prefix('produk')->group(function () {
 
     Route::get('/JenisProduk', [ProdukController::class, 'JenisProduk'])->name('produk.JenisProduk');
     // routes/web.php
-    Route::get('/Vul', [ProdukController::class, 'ShowProdukVul'])->name('produk.vul');
+    Route::get('/Vul', [ProdukController::class, 'ShowProdukVul'])->name('produk.Vul');
     Route::get('/Sne', [ProdukController::class, 'ShowProdukSne'])->name('produk.Sne');
     Route::get('/So', [ProdukController::class, 'ShowProdukSo'])->name('produk.So');
     
