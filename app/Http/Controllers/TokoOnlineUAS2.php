@@ -47,30 +47,25 @@ class TokoOnlineUAS2 extends Controller
 
     public function store(Request $request)
     {
-
-
-        $validatedData = $request->validate([
-            // 'kode' => 'required',
+        $product = $request->validate([
+            'kode' => 'required',
             'nama_produk' => 'required',
-            'harga_produk' => 'required |numeric',
-            'stok_produk' => 'required |numeric',
-            'min_stok' => 'required |numeric',
+            'harga_produk' => 'required',
+            'stok_produk' => 'required',
+            'min_stok' => 'required',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'deskripsi_produk' => 'required',
             // 'kategori_produk_id' => 'required',
         ]);
-
-        // Simpan gambar ke dalam database
         $gambar = $request->file('gambar');
         $gambarName = time() . '.' . $gambar->getClientOriginalExtension();
         $gambar->storeAs('public/gambar', $gambarName);
 
         if ($request->file('gambar')) {
-            $request->all()['gambar'] = $request->file('gambar')->store('post-gambar');
+            $product['gambar'] = $request->file('gambar')->store('gambar');
         }
-
-        Produk::create($validatedData);
-        return redirect()->route('toko.admin')->with('success', 'Produk berhasil disimpan');
+        Produk::create($product);
+        return redirect()->route('produk.admin')->with('success', 'Produk berhasil disimpan');
     }
 
     public function edit(Produk $produk)
@@ -88,16 +83,13 @@ class TokoOnlineUAS2 extends Controller
     public function update(Request $request, Produk $produk)
     {
         $request->validate([
-            // 'kode' => 'required',
+            'kode' => 'required',
             'nama_produk' => 'required',
             'harga_produk' => 'required',
             'stok_produk' => 'required',
             'min_stok' => 'required',
-            // 'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'deskripsi_produk' => 'required',
         ]);
-
-        
 
         $produk->update($request->all());
         return redirect()->route('produk.admin')->with('update', 'Product updated successfuly');
