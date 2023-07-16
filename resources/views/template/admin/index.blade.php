@@ -25,9 +25,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="../../../home" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
+      {{-- <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
-      </li>
+      </li> --}}
     </ul>
 
     <!-- Right navbar links -->
@@ -205,7 +205,7 @@
                   <p>Halaman Data</p>
                 </a>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="../../index2.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v2</p>
@@ -216,7 +216,7 @@
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v3</p>
                 </a>
-              </li>
+              </li> --}}
             </ul>
           </li>
          
