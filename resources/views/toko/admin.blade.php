@@ -1,15 +1,13 @@
 @extends('template/admin/index')
 
 @section('content')
-
 <div style="margin-top: 10px">
-<h1>Products</h1>
 <a href="{{ route('produk.create') }}" class="btn btn-primary mb-3">Tambah Produk</a>
 </div>
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
+        <th scope="col">No</th>
         <th scope="col">Kode</th>
         <th scope="col">Nama Produk</th>
         <th scope="col">Harga</th>
@@ -25,7 +23,7 @@
         @php $number = 1;  @endphp
         @foreach($produk as $product)
         <tr>
-          <th scope="row">{{ $loop->iteration }} </th>
+          {{-- <th scope="row">{{ $loop->iteration }} </th> --}}
             <td>{{ $number }}</td>
             <td>{{ $product->kode }}</td>
             <td>{{ $product->nama_produk }}</td>
